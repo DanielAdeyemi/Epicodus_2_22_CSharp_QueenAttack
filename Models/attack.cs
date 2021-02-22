@@ -7,28 +7,31 @@ namespace QueenAttack.Models
 
     public Queen(int x, int y)
     {
-      X=x;
-      Y=y;
+      XQueen=x;
+      YQueen=y;
     }
 
-    public bool Attack(int x, int y)
+    public bool Attack(int x, int y){
+    for (int i = 1; i< 7; i++)
     {
-      //chess board 8x8
-      //(0,0)
-      //if (x == 0, or y == 0 ) under attack
-      // if (x==y)
-      //(X,0)
-      // if (x == X || y == 0) UA
-      // 
+      if(XQueen-i<0 && XQueen+i>7 && YQueen-i<0 && YQueen+i>7)
+        break;
+      if((x == XQueen - i && y == YQueen - i) || 
+      (x == XQueen + i && y == YQueen - i) || 
+      (x == XQueen + i && y == YQueen + i) || 
+      (x == XQueen - i && y == YQueen + i))
+        return true;
+    }
+    return false;
     }
   }
 }
-loop until (x==0 || x== 8 || y == 0 || y == 8)
+// loop until (x==0 || x== 8 || y == 0 || y == 8)
 // (+1,+1)
 // (-1,+1)
 // (-1,-1)
 // (+1,-1)
 
-.........
-
-
+// A and B are Queen coordinates and x and y are piece
+// if A > x: y-n(-1) if B > y: y-n(-1)
+// 
