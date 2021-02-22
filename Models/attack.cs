@@ -2,8 +2,8 @@ namespace QueenAttack.Models
 {
   public class Queen
   {
-    public int X{ get; set;}
-    public int Y{ get; set;}
+    public int XQueen{ get; set;}
+    public int YQueen{ get; set;}
 
     public Queen(int x, int y)
     {
@@ -12,6 +12,7 @@ namespace QueenAttack.Models
     }
 
     public bool Attack(int x, int y){
+      
     for (int i = 1; i< 7; i++)
     {
       if(XQueen-i<0 && XQueen+i>7 && YQueen-i<0 && YQueen+i>7)
