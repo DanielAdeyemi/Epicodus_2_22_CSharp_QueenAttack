@@ -17,6 +17,12 @@ namespace QueenAttack
       Console.WriteLine("Insert Y for a piece: ");
       int yU = int.Parse(Console.ReadLine());
 
+      if (x < 1 || y < 1 || xU < 1 || yU < 1 || x > 8 || y > 8 || xU > 8 || yU > 8)
+      {
+        Console.WriteLine("Invalid input");
+        Main();
+      }
+
       Queen queen = new Queen(x,y);
       if (queen.Attack(xU, yU))
       {
