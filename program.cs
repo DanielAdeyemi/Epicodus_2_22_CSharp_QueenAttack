@@ -8,8 +8,18 @@ namespace QueenAttack
   {
     public static void Main()
     {
+      int x;
       Console.WriteLine("Insert X for Queen: ");
-      int x = int.Parse(Console.ReadLine());
+      bool success = int.TryParse(Console.ReadLine(),out x);
+      if (success) 
+      {
+        
+      }
+      else
+      {
+        Console.WriteLine("Please enter a valid number");
+        Main();
+      }
       Console.WriteLine("Insert Y for Queen: ");
       int y = int.Parse(Console.ReadLine());
       Console.WriteLine("Insert X for a piece: ");
